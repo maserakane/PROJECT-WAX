@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="dist/bundle.js"></script> <!-- Include your JavaScript bundle -->
+<!-- Define the 'login' function in the script section -->
+<script>
+  let session;
+
+  async function login() {
+    const response = await sessionKit.login();
+    session = response.session;
+    // Handle the session or perform actions after successful login
+  }
+
+  async function sign() {
+    // Implement the 'sign' function as needed
+  }
+</script>
+
+<strong>WAX Login</strong>
+<p>Use this if you're not automatically logged in. Note that if you are auto-logged in, clicking this does not open a popup, and the userAccount is still returned.</p>
+<!-- Bind the 'login' function to the button click event -->
+<button id="login-button" onclick="login()">Login</button>
+<p style="color:#ef9d47" id="loginresponse"></p>
+<p>&amp;nbsp;</p>
+<strong>Sign Transaction</strong>
+<p>Click once you're logged in.</p>
+<button id="sign" onclick="sign()">Sign Transaction</button>
+<pre><code id="response">Transaction Response</code></pre>
+
+</body>
+</html>
